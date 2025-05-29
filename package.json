@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node bin/www.ts",
-    "start": "ts-node bin/www.ts"
+    "start": "node dist/bin/www.js"
   },
   "keywords": [],
   "author": "",

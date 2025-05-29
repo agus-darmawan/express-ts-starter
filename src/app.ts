@@ -30,10 +30,11 @@ app.use((_req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.get("/metrics", async (_req: Request, res: Response) => {
-  res.set("Content-Type", promClient.register.contentType);
-  const metrics = await promClient.register.metrics();
-  res.end(metrics);
+app.get("/", (_req: Request, res: Response) => {
+  res.status(200).json({
+    message: "Welcome to the API",
+    status: "success",
+  });
 });
 
 app.use("/api", v1Routes);

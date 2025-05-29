@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM node:22
 
 RUN npm install -g pnpm
 
@@ -10,6 +10,8 @@ RUN pnpm install
 
 COPY . .
 
+RUN pnpm run build
+
 EXPOSE 3001
 
-CMD ["pnpm", "start"]
+CMD ["node", "dist/bin/www.js"]
