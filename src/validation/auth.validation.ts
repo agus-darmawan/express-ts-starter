@@ -1,31 +1,31 @@
-import { body } from "express-validator";
+import { body } from 'express-validator';
 
 export const registerValidation = [
-  body("name")
+  body('name')
     .notEmpty()
-    .withMessage("Name is required")
+    .withMessage('Name is required')
     .isLength({ max: 50 })
-    .withMessage("Name must be less than 50 characters"),
+    .withMessage('Name must be less than 50 characters'),
 
-  body("email")
+  body('email')
     .isEmail()
-    .withMessage("Valid email is required")
+    .withMessage('Valid email is required')
     .normalizeEmail(),
 
-  body("password")
+  body('password')
     .isLength({ min: 6 })
-    .withMessage("Password must be at least 6 characters")
+    .withMessage('Password must be at least 6 characters')
     .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)
-    .withMessage("Password must contain letters and numbers"),
+    .withMessage('Password must contain letters and numbers'),
 ];
 
 export const loginValidation = [
-  body("email")
+  body('email')
     .isEmail()
-    .withMessage("Valid email is required")
+    .withMessage('Valid email is required')
     .normalizeEmail(),
 
-  body("password")
+  body('password')
     .isLength({ min: 6 })
-    .withMessage("Password must be at least 6 characters"),
+    .withMessage('Password must be at least 6 characters'),
 ];

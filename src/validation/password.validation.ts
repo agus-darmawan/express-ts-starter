@@ -1,22 +1,22 @@
-import { body } from "express-validator";
+import { body } from 'express-validator';
 
 export const resetPasswordValidation = [
-  body("token")
+  body('token')
     .notEmpty()
-    .withMessage("Reset token is required")
+    .withMessage('Reset token is required')
     .isString()
-    .withMessage("Token must be a string"),
+    .withMessage('Token must be a string'),
 
-  body("newPassword")
+  body('newPassword')
     .isLength({ min: 6 })
-    .withMessage("Password must be at least 6 characters")
+    .withMessage('Password must be at least 6 characters')
     .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)
-    .withMessage("Password must contain letters and numbers"),
+    .withMessage('Password must contain letters and numbers'),
 ];
 
 export const requestPasswordResetValidation = [
-  body("email")
+  body('email')
     .isEmail()
-    .withMessage("Valid email is required")
+    .withMessage('Valid email is required')
     .normalizeEmail(),
 ];

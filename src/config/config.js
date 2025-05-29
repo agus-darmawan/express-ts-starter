@@ -1,4 +1,4 @@
-require("ts-node/register");
-const config = require("./config.ts").default;
+import 'ts-node/register';
+import config from './config.ts';
 
-module.exports = config;
+export default config;

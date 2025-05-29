@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import logger from "./logger";
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import logger from './logger';
 
 dotenv.config();
 
-const dbName = process.env.MONGO_DB_NAME || "default_db";
+const dbName = process.env.MONGO_DB_NAME || 'default_db';
 const mongoURI = process.env.MONGO_URI;
 
 if (!mongoURI) {
-  throw new Error("MONGO_URI environment variable is not defined.");
+  throw new Error('MONGO_URI environment variable is not defined.');
 }
 
 export const syncDatabase = async () => {

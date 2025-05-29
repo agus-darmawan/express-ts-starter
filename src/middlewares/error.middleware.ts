@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+import { Response, Request } from 'express';
 
 export const notFoundHandler = (req: Request, res: Response) => {
   res.status(404).json({
